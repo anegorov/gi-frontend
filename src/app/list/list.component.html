@@ -1,0 +1,7 @@
+<div class="ui-g-12 ui-md-6 ui-lg-4" *ngFor="let product of products" routerLink="/{{product._id}}">
+  <p-card header="{{product.sname}}" [style]="{width: '360px'}">
+    <div>
+      {{product.description}}
+    </div>
+  </p-card>
+  </div>
