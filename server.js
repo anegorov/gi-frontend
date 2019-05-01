@@ -39,6 +39,8 @@ function detectBot(userAgent){
 
 app.get('/*', function(req,res) {
 
+console.log('Req tail:', req.originalUrl);
+
 const isBot = detectBot(req.headers['user-agent']);
     if(isBot) {
         // res.send('This is bot');
