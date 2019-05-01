@@ -36,4 +36,18 @@ export class HttpService {
     
     return this.http.get(url+'/'+id, httpOptions); 
   }
+
+  getProductByLink(link:string): Observable<any>{
+    
+    const url = 'https://guidein.herokuapp.com/api/render/product/link';
+
+    const httpOptions = {
+          headers: new HttpHeaders({
+            'Content-Type':  'application/json',
+            'Access-Control-Allow-Origin': '*'
+          })
+        };
+    
+    return this.http.get(url+'/'+link, httpOptions); 
+  }
 }

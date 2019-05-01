@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: ListComponent },
   { path: 'main.html', component: ListComponent },
   { path: 'new.html', component: NewComponent },
-  { path: ':_id', component: ItemComponent }
+  { path: ':link', component: ItemComponent }
 ];
 
 @NgModule({
