@@ -39,19 +39,27 @@ function detectBot(userAgent){
 
 app.get('/*', function(req,res) {
 
-console.log('Req tail:', req.originalUrl);
+  const renderUrl = 'https://guidein.herokuapp.com/render';
+  const links = [
+    '/domik-i-polka-svoimi-rukami.html',
+    '/detskaya-krovat-gulliver.html',
+    '/prostaya-loshadka-kachalka.html',
+    '/mashinka-80-x.html'
+  ];
 
-const isBot = detectBot(req.headers['user-agent']);
-    if(isBot) {
-        // res.send('This is bot');
-    fetch(`https://guidein.herokuapp.com/render/domik-i-polka-svoimi-rukami.html`)
-      .then(res => res.text())
-      .then(body => {
-      res.send(body.toString());
-      });
-    }else{
+  console.log('Req tail:', req.originalUrl);
+
+  const isBot = detectBot(req.headers['user-agent']);
+      if(isBot && links.includes(req.originalUrl)) {
+        fetch(renderUrl + req.originalUrl)
+          .then(res => res.text())
+          .then(body => {
+          res.send(body.toString());
+          });
+      }else{
         res.sendFile(path.join(__dirname, '/dist/gi-front/index.html'));
-    }
+      }
 });
+
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
