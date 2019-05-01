@@ -18,9 +18,9 @@ export class ItemComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
-      let userId = params['_id'];//'5c72c445ac61c00a80224473'
+      //let userId = params['_id'];//'5c72c445ac61c00a80224473'
       let productLink = params['link'];
-      this.HttpService.getProductById(productLink).subscribe(
+      this.HttpService.getProductByLink(productLink).subscribe(
         product => this.product = product
       );
     
