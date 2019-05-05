@@ -1,3 +1,13 @@
-<div *ngIf="product as prod">
-  {{prod.sname}}
+<div class="ui-g-1 ui-md-2 ui-lg-3"></div>
+<div class="ui-g-10 ui-md-8 ui-lg-6" *ngIf="product as prod">
+  <div class="ui-lg-12">
+    <h3>{{prod.sname}}</h3>
+  </div>
+  <div class="ui-lg-12" style="white-space: pre-line;">
+    {{description}}
+  </div>
+  <div class="ui-lg-12">
+      <img src="assets/Сборка.jpg">
+  </div>
 </div>
+<div class="ui-g-1 ui-md-2 ui-lg-3"></div>

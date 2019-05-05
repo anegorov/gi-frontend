@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
 import {HttpService} from "../http.service";
+import {Product} from "../Product";
 
 @Component({
   selector: 'app-item',
@@ -9,7 +10,8 @@ import {HttpService} from "../http.service";
 })
 export class ItemComponent implements OnInit {
 
-  product:any;
+  product:Product;
+  description:string='NoN';
 
   constructor(
     private route: ActivatedRoute,
@@ -21,7 +23,11 @@ export class ItemComponent implements OnInit {
       //let userId = params['_id'];//'5c72c445ac61c00a80224473'
       let productLink = params['link'];
       this.HttpService.getProductByLink(productLink).subscribe(
-        product => this.product = product
+        product => {
+          this.product = product;
+          this.description = product.description;
+          this.description = this.description.replace('<br>','\n');
+        }
       );
     
     });
