@@ -11,7 +11,10 @@ import {Product} from "../Product";
 export class ItemComponent implements OnInit {
 
   product:Product;
+  txt:Array<string>;
   description:string='NoN';
+  test = [{"id":"111"},{"id":"222"}];
+  key:boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,6 +22,12 @@ export class ItemComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    function pText(param:string) {
+      return {value:param};
+    }
+
+
+    
     this.route.params.subscribe((params: Params) => {
       //let userId = params['_id'];//'5c72c445ac61c00a80224473'
       let productLink = params['link'];
@@ -27,6 +36,7 @@ export class ItemComponent implements OnInit {
           this.product = product;
           this.description = product.description;
           this.description = this.description.replace('<br>','\n');
+          this.txt = product.text.map(v => v = pText(v));
         }
       );
     

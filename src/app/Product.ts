@@ -7,4 +7,5 @@ export class Product {
     tags: string;
     type: string;
     link: string;
+    text: Array<string>;
 }

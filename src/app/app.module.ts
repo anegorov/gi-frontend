@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
 import { NewComponent } from './new/new.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +32,9 @@ import { NewComponent } from './new/new.component';
     CardModule,
     MenuModule,
     ButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,8 +6,19 @@
   <div class="ui-lg-12" style="white-space: pre-line;">
     {{description}}
   </div>
+  
   <div class="ui-lg-12">
       <img src="assets/Сборка.jpg">
+  </div>
+
+  <div class="ui-lg-12" *ngFor="let tx of txt">
+      <div *ngIf="tx.value.includes('assets'); then showImage else showText"></div>
+      <ng-template #showImage>
+        <div class="ui-lg-12"><img src="{{tx.value}}"></div>
+      </ng-template>
+      <ng-template #showText>
+          <div class="ui-lg-12">{{tx.value}}</div>
+      </ng-template>
   </div>
 </div>
 <div class="ui-g-1 ui-md-2 ui-lg-3"></div>
