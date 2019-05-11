@@ -15,7 +15,9 @@ import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
 import { NewComponent } from './new/new.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {FieldsetModule} from 'primeng/fieldset';
+import {TabViewModule} from 'primeng/tabview';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ButtonModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FieldsetModule,
+    TabViewModule,
+    BreadcrumbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

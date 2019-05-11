@@ -1,23 +1,25 @@
 <div class="ui-g-1 ui-md-2 ui-lg-3"></div>
 <div class="ui-g-10 ui-md-8 ui-lg-6" *ngIf="product as prod">
+  <p-breadcrumb [model]="items"></p-breadcrumb>
   <div class="ui-lg-12">
-    <h3>{{prod.sname}}</h3>
+    <div class="title">
+    <h1>{{prod.sname}}</h1>
   </div>
-  <div class="ui-lg-12" style="white-space: pre-line;">
-    {{description}}
   </div>
-  
-  <div class="ui-lg-12">
-      <img src="assets/Сборка.jpg">
+  <div class="ui-lg-12 img-main">
+      <img src="{{prod.image}}">
   </div>
-
+  <!-- <p-fieldset legend="Краткое описание">
+      <p>{{description}}</p>
+  </p-fieldset> -->
+  <div class="ui-lg-12"><p>{{description}}</p></div>
   <div class="ui-lg-12" *ngFor="let tx of txt">
       <div *ngIf="tx.value.includes('assets'); then showImage else showText"></div>
       <ng-template #showImage>
-        <div class="ui-lg-12"><img src="{{tx.value}}"></div>
+        <div class="ui-lg-12 img-steps"><img src="{{tx.value}}"></div>
       </ng-template>
       <ng-template #showText>
-          <div class="ui-lg-12">{{tx.value}}</div>
+          <div class="ui-lg-12"><p>{{tx.value}}</p></div>
       </ng-template>
   </div>
 </div>

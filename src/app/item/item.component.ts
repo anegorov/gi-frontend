@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
 import {HttpService} from "../http.service";
 import {Product} from "../Product";
+import {MenuItem} from 'primeng/api';
 
 @Component({
   selector: 'app-item',
@@ -13,8 +14,7 @@ export class ItemComponent implements OnInit {
   product:Product;
   txt:Array<string>;
   description:string='NoN';
-  test = [{"id":"111"},{"id":"222"}];
-  key:boolean = true;
+  items: MenuItem[];
 
   constructor(
     private route: ActivatedRoute,
@@ -23,11 +23,14 @@ export class ItemComponent implements OnInit {
 
   ngOnInit() {
     function pText(param:string) {
-      return {value:param};
+      const param1 = param.split('|').join('\n');
+      return {value:param1};
     }
 
-
-    
+    this.items = [
+      {label:'Главная', url: 'http://localhost:4200'}
+  ];
+      
     this.route.params.subscribe((params: Params) => {
       //let userId = params['_id'];//'5c72c445ac61c00a80224473'
       let productLink = params['link'];
@@ -35,8 +38,9 @@ export class ItemComponent implements OnInit {
         product => {
           this.product = product;
           this.description = product.description;
-          this.description = this.description.replace('<br>','\n');
+          this.description = this.description.split('|').join('\n');
           this.txt = product.text.map(v => v = pText(v));
+          this.items.push({label:this.product.sname, url: 'https://guidein.ru/'+this.product.link})
         }
       );
     
