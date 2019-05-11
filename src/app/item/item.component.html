@@ -7,16 +7,13 @@
   </div>
   </div>
   <div class="ui-lg-12 img-main">
-      <img src="{{prod.image}}">
+      <app-gallery [images]="prod.gallery"></app-gallery>
   </div>
-  <!-- <p-fieldset legend="Краткое описание">
-      <p>{{description}}</p>
-  </p-fieldset> -->
   <div class="ui-lg-12"><p>{{description}}</p></div>
   <div class="ui-lg-12" *ngFor="let tx of txt">
       <div *ngIf="tx.value.includes('assets'); then showImage else showText"></div>
       <ng-template #showImage>
-        <div class="ui-lg-12 img-steps"><img src="{{tx.value}}"></div>
+        <div class="ui-lg-12 img-steps"><img class="img-steps" src="{{tx.value}}"></div>
       </ng-template>
       <ng-template #showText>
           <div class="ui-lg-12"><p>{{tx.value}}</p></div>

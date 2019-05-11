@@ -27,6 +27,8 @@
     "@angular/router": "~7.0.0",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
+    "font-awesome": "^4.7.0",
+    "ngx-gallery": "^5.10.0",
     "node-fetch": "^2.5.0",
     "path": "^0.12.7",
     "primeicons": "^1.0.0",

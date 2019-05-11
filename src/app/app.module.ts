@@ -18,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {FieldsetModule} from 'primeng/fieldset';
 import {TabViewModule} from 'primeng/tabview';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
+import { NgxGalleryModule } from 'ngx-gallery';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {BreadcrumbModule} from 'primeng/breadcrumb';
     MenuComponent,
     ListComponent,
     ItemComponent,
-    NewComponent
+    NewComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import {BreadcrumbModule} from 'primeng/breadcrumb';
     ReactiveFormsModule,
     FieldsetModule,
     TabViewModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    NgxGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

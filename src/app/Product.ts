@@ -8,4 +8,5 @@ export class Product {
     type: string;
     link: string;
     text: Array<string>;
+    gallery: Array<string>;
 }
