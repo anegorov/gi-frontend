@@ -24,6 +24,7 @@ import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
 import {TabMenuModule} from 'primeng/tabmenu';
 import { HelloComponent } from './hello/hello.component';
 import { MainComponent } from './main/main.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MainComponent } from './main/main.component';
     NewComponent,
     GalleryComponent,
     HelloComponent,
-    MainComponent
+    MainComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
