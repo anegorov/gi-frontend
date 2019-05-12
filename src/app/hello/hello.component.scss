@@ -1,0 +1,39 @@
+.img-steps{
+    text-align: center;
+    width:auto;
+    max-height: 300px;
+    border-radius: 20%;
+}
+.wrapper {
+    background: url(wood-591631_1280.jpg);
+    background-size: cover;
+  }
+
+.title{
+    text-align: center;
+    color: white;
+}
+
+h3{
+    font-family: medium-content-title-font,Georgia,Cambria,"Times New Roman",Times,serif;
+    font-size: 23px;
+}
+h1{
+    font-family: medium-content-title-font,Georgia,Cambria,"Times New Roman",Times,serif;
+    font-size: 36px;
+}
+div{
+    white-space: pre-line;
+}
+p{
+    font-family: medium-content-title-font,Georgia,Cambria,"Times New Roman",Times,serif;
+    // --x-height-multiplier: 0.375;
+    // --baseline-multiplier: 0.17;
+    // font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+    // letter-spacing: .01rem;
+    // font-weight: 400;
+    // font-style: normal;
+    // font-size: 21px;
+    // line-height: 1.58;
+    // letter-spacing: -.003em;
+}

@@ -22,6 +22,8 @@ import { NgxGalleryModule } from 'ngx-gallery';
 import { GalleryComponent } from './gallery/gallery.component';
 import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
 import {TabMenuModule} from 'primeng/tabmenu';
+import { HelloComponent } from './hello/hello.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {TabMenuModule} from 'primeng/tabmenu';
     ListComponent,
     ItemComponent,
     NewComponent,
-    GalleryComponent
+    GalleryComponent,
+    HelloComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
