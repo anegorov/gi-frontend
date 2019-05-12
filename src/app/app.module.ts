@@ -20,6 +20,8 @@ import {TabViewModule} from 'primeng/tabview';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { GalleryComponent } from './gallery/gallery.component';
+import {AngularStickyThingsModule} from '@w11k/angular-sticky-things';
+import {TabMenuModule} from 'primeng/tabmenu';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { GalleryComponent } from './gallery/gallery.component';
     FieldsetModule,
     TabViewModule,
     BreadcrumbModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    AngularStickyThingsModule,
+    TabMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
