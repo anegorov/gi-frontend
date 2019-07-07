@@ -1,7 +1,26 @@
-<div class="ui-g-12 ui-md-4 ui-lg-3" *ngFor="let product of products" routerLink="/{{product.link}}">
-  <p-card header="{{product.sname}}" *ngIf="product.isPublished">
-    <div>
-      {{product.description}}
+<!-- <div class="tile is-ancestor">
+  <div class="tile is-3 box" *ngFor="let product of products" routerLink="/{{product.link}}">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="{{product.image}}" alt="{{product.sname}}">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">{{product.description}}</div>
+      </div>
     </div>
-  </p-card>
   </div>
+</div> -->
+
+<div class="tile is-ancestor">
+  <div class="tile is-parent is-3" *ngFor="let product of products" routerLink="/{{product.link}}">
+    <article class="tile is-child box">
+      <p class="title">{{product.sname}}</p>
+      <figure class="image is-4by3">
+          <img src="{{product.image}}">
+        </figure>
+      <p class="subtitle">{{product.description | slice:0:50}}</p>
+    </article>
+  </div>
+</div>
