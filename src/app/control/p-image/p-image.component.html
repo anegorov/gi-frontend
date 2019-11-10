@@ -1,0 +1,10 @@
+<div *ngIf="key; else sizeSmall">
+  <div class="ui-g-12">
+      <a (click)="chengeSize()"><img src="{{url}}"></a>
+  </div>
+</div>
+<ng-template #sizeSmall>
+  <div class="ui-g-4">
+      <a (click)="chengeSize()"><img src="{{url}}"></a>
+  </div>
+</ng-template>

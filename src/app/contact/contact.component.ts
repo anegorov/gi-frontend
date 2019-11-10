@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewChild, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styles: ['canvas { border-style: solid }']
 })
 export class ContactComponent implements OnInit {
+    
+  @ViewChild('canvas')
+  canvas: ElementRef<HTMLCanvasElement>;  
+  
+  private ctx: CanvasRenderingContext2D;
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
+    this.ctx = this.canvas.nativeElement.getContext('2d');
   }
+  
+  animate(): void {}
 
 }

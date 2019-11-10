@@ -1,0 +1,30 @@
+<div class="ui-g-1 ui-md-2 ui-lg-3"></div>
+<div class="ui-g-10 ui-md-8 ui-lg-6" *ngIf="article as art">
+  <!-- <p-breadcrumb [model]="items"></p-breadcrumb> -->
+  <div class="ui-lg-12">
+    <div class="title">
+      <h1>{{art.sname}}</h1>
+    </div>
+  </div>
+  
+  <div class="ui-lg-12"><p>{{art.lname}}</p></div>
+  <div class="ui-lg-12" *ngFor="let bo of art.body">
+    
+    <div class="ui-g-12">
+      <h1>{{bo.title}}</h1>
+      <div class="ui-g-12">
+          <div *ngFor="let img of bo.images">
+              <p-image isFull="{{bo.size}}" srcUrl="{{img}}"></p-image>
+              <!-- <p-image srcUrl="{{img}}"></p-image> -->
+          </div>          
+      </div>
+      <div class="ui-lg-12">
+        <p>{{bo.text}}</p>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+<div class="ui-g-1 ui-md-2 ui-lg-3"></div>

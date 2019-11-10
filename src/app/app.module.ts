@@ -25,6 +25,10 @@ import {TabMenuModule} from 'primeng/tabmenu';
 import { HelloComponent } from './hello/hello.component';
 import { MainComponent } from './main/main.component';
 import { ContactComponent } from './contact/contact.component';
+import { ArticleComponent } from './pages/article/article.component';
+import { HttpService } from './http.service';
+import { ArticleService } from './services/article.service';
+import { PImageComponent } from './control/p-image/p-image.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,9 @@ import { ContactComponent } from './contact/contact.component';
     GalleryComponent,
     HelloComponent,
     MainComponent,
-    ContactComponent
+    ContactComponent,
+    ArticleComponent,
+    PImageComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +61,10 @@ import { ContactComponent } from './contact/contact.component';
     AngularStickyThingsModule,
     TabMenuModule
   ],
-  providers: [],
+  providers: [
+    HttpService,
+    ArticleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
